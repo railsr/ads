@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_request, only: :create
+  before_action :set_user, only: [:show]
+
+  def show
+    render json: @user
+  end
 
   def create
     user = User.new(name: params[:name],
@@ -10,5 +15,10 @@ class UsersController < ApplicationController
     else
       render json: { errors: user.errors }, status: :unprocessable_entity
     end
+  end
+
+  private
+  def set_user
+    @user = User.find(params[:id])
   end
 end

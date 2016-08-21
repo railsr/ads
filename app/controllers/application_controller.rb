@@ -17,7 +17,6 @@ class ApplicationController < ActionController::API
     if request.headers['Authorization'].present?
       token = request.headers['Authorization'].split(' ').last
       JsonWebToken.decode(token)
-
     end
   end
 end

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :ads
   end
 
-  post 'authenticate', to: 'authentication#authenticate_user'
+  post 'auth', to: 'authentication#authenticate_user'
 end

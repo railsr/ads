@@ -3,7 +3,6 @@ class ApplicationController < ActionController::API
 
   private
   def authenticate_request
-
     if decoded_auth_token
       @current_user = User.find(decoded_auth_token[:user_id])
     else

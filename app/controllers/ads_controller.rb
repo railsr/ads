@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :update, :destroy]
-  
+
   def index
     @ads = Ad.all
     render json: @ads
@@ -23,7 +23,7 @@ class AdsController < ApplicationController
     if @ad.update(ad_params)
       render json: @ad
     else
-      render json: @ad.error, status: :unprocessable_entity
+      render json: @ad.errors, status: :unprocessable_entity
     end
   end
 

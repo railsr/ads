@@ -19,3 +19,13 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+# Frontend
+
+# ng-client
+/public/ng-client/node_modules
+/public/ng-client/typings
+
+
+.DS_Store

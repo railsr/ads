@@ -24,8 +24,8 @@
 # Frontend
 
 # ng-client
-/public/ng-client/node_modules
-/public/ng-client/typings
+ng-client/node_modules
+/ng-client/typings
 
 
 .DS_Store

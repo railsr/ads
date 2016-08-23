@@ -8,8 +8,9 @@
 
 
 30.times do
-  Ad.create(
+  Ad.create!(
     title: FFaker::Lorem.phrase(5),
-    description: FFaker::Lorem.paragraph
+    description: FFaker::Lorem.paragraph,
+    user_id: 1
   )
 end

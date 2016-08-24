@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AdsComponent } from './ads/ads.component';
 import { ApiService } from './shared';
 
 import '../style/app.scss';

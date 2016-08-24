@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdService } from './ad.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,17 +9,17 @@ import { ActivatedRoute } from '@angular/router';
   <p>{{ad.description}}</p>
   `
 })
-export class AdDetailsComponent implements OnInit{
+export class AdDetailsComponent implements OnInit {
   ad = {};
 
-  constructor(private _route: ActivatedRoute, private _adService: AdService){
+  constructor(private _route: ActivatedRoute, private _adService: AdService) {
 
   }
-  ngOnInit(){
+  ngOnInit() {
     let id = this._route.snapshot.params['id'];
     return this._adService.getAd(id).subscribe(res => {
       console.log(res);
-      this.ad = res['data']['attributes']
+      this.ad = res['data']['attributes'];
     });
   }
 }

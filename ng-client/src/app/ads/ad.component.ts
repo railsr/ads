@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'ad',
   template: `
-  <div class="media well" (click)="onToggle($event)">
+  <div class="media well">
     <div class="media-left">
 
     </div>
@@ -21,11 +21,4 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AdComponent {
   @Input() data;
-
-  @Output()
-  added = new EventEmitter();
-
-  onToggle() {
-    this.added.emit(this.data);
-  }
 }

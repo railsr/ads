@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AdService {
-  private _url = 'http://localhost:3000/ads';
+  private _url = 'http://localhost:3000/ads'
 
   constructor(private _http: Http) {
 

@@ -50,8 +50,8 @@ export class NewAdComponent{
 
   onCreateAd(){
     return this._adService.postAd(this.newAdForm.value).subscribe(x => {
-      console.log(x['data'])
-      this.createAd.next(x['data']);
+      console.log(x)
+      this.createAd.next(x);
     })
   }
 }

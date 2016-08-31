@@ -35,6 +35,6 @@ export class AdsComponent implements OnInit {
   }
 
   onCreateAd(ad){
-    this.ads.unshift(ad);
+    this.ads.unshift(ad['data']);
   }
 }

@@ -3,7 +3,7 @@ class AdsController < ApplicationController
 
   def index
     @ads = Ad.all
-    render json: @ads
+    render json: @ads.order('created_at DESC')
   end
 
   def show
@@ -12,6 +12,7 @@ class AdsController < ApplicationController
 
   def create
     @ad = Ad.new(ad_params)
+    @ad.user_id = 1
     if @ad.save
       render json: @ad, status: :created, location: @ad
     else

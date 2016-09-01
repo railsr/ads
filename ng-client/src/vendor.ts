@@ -15,3 +15,4 @@ import 'rxjs';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'node_modules/marked/marked.min.js';

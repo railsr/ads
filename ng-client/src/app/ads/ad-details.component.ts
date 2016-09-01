@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   template: `
   <h1>{{ad.title}}</h1>
-  <p>{{ad.description}}</p>
+  <p [innerHTML] = "ad.description | md"></p>
   `
 })
 export class AdDetailsComponent implements OnInit {

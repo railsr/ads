@@ -20,7 +20,7 @@ export class AdService {
     return this._http.get(this._url + '/' + id).map(res => res.json());
   }
 
-  postAd(ad){
+  postAd(ad) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 

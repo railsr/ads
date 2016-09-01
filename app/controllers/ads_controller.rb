@@ -12,7 +12,7 @@ class AdsController < ApplicationController
 
   def create
     @ad = Ad.new(ad_params)
-    @ad.user_id = 1
+    @ad.user_id = 1 # should be set to current user
     if @ad.save
       render json: @ad, status: :created, location: @ad
     else

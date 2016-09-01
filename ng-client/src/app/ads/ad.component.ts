@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'ad',
@@ -9,7 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     </div>
     <div class="media-body">
       <h4 class="media-heading"><a [routerLink]="['/ads', data.id]">{{data.attributes.title}}</a> </h4>
-      {{data.attributes.description}}<br/>
+      <p [innerHTML] = "data.attributes.description | md"></p><br/>
     </div>
   </div>
   `,

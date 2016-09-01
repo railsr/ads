@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AdService } from './ad.service';
 import { NewAdComponent } from './new-ad.component';
 import {Ad} from './ad';
@@ -12,6 +12,7 @@ import {Ad} from './ad';
     </div>
 
     <div class="col-md-7">
+      <h3 *ngIf="(ads && ads.length == 0)" class="text-center">No ads yet</h3>
       <div *ngFor="let ad of ads" >
         <ad [data]="ad"></ad>
       </div>
@@ -20,7 +21,7 @@ import {Ad} from './ad';
   `,
   directives: [NewAdComponent]
 })
-export class AdsComponent implements OnInit {
+export class AdsComponent {
   ads: Ad[];
   ad = new Ad();
   constructor(private _adService: AdService) {
@@ -34,7 +35,7 @@ export class AdsComponent implements OnInit {
     });
   }
 
-  onCreateAd(ad){
+  onCreateAd(ad) {
     this.ads.unshift(ad['data']);
   }
 }

@@ -8,8 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   <div class="row">
     <div class="col-md-12">
       <div class="wellc">
+      <button (click)="toggleCollapse()" class="btn btn-xs btn-primary pull-right">Toggle collapse</button>
         <h1>{{ad.title}}</h1>
-        <p [innerHTML] = "ad.description | md"></p>
+        <p *ngIf="!isCollapsed" [innerHTML] = "ad.description | md"></p>
       </div>
     </div>
   </div>
@@ -17,6 +18,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdDetailsComponent implements OnInit {
   ad = {};
+  isCollapsed = false;
 
   constructor(private _route: ActivatedRoute, private _adService: AdService) {
 
@@ -27,5 +29,8 @@ export class AdDetailsComponent implements OnInit {
       console.log(res);
       this.ad = res['data']['attributes'];
     });
+  }
+  toggleCollapse(){
+    this.isCollapsed = !this.isCollapsed;
   }
 }

@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-30.times do
+10.times do
   Ad.create!(
     title: FFaker::Lorem.phrase(5),
-    description: FFaker::Lorem.paragraph,
+    description: "",
     user_id: 1
   )
 end

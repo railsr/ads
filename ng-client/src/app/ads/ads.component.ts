@@ -13,7 +13,9 @@ import {Ad} from './ad';
     </div>
 
     <div class="col-md-7">
-      <h3 *ngIf="(ads && ads.length == 0)" class="text-center">No ads yet</h3>
+      <div *ngIf="(ads && ads.length == 0)" class="wellc">
+        <h3 class="text-center">No ads yet</h3>
+      </div>
 
       <div *ngFor="let ad of ads" >
         <ad [data]="ad"></ad>

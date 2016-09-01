@@ -5,8 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   template: `
-  <h1>{{ad.title}}</h1>
-  <p [innerHTML] = "ad.description | md"></p>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ad.title}}</h1>
+      <p [innerHTML] = "ad.description | md"></p>
+    </div>
+  </div>
   `
 })
 export class AdDetailsComponent implements OnInit {

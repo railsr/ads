@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'ad',
   template: `
-  <div class="media well">
+  <div class="media wellc">
     <div class="media-left">
 
     </div>
@@ -14,9 +14,7 @@ import { Component, Input } from '@angular/core';
   </div>
   `,
   styles: [`
-    .media {
-      margin: 20px;
-    }
+
   `]
 })
 export class AdComponent {

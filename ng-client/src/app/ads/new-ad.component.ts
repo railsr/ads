@@ -8,7 +8,7 @@ import {Ad} from './ad';
   selector: 'new-ad',
   template: `
 
-    <form [formGroup]="newAdForm" (ngSubmit)="onCreateAd()">
+    <form [formGroup]="newAdForm" (ngSubmit)="onCreateAd()" class="wellc">
       <div >
         <div class="form-group" >
           <label>Title</label>
@@ -19,19 +19,19 @@ import {Ad} from './ad';
         </div>
         <div class="form-group" >
           <label>Description</label>
-          <textarea rows=5 class="form-control" id="description" [(ngModel)]="ad.description" formControlName="description"></textarea>
+          <textarea rows="10" class="form-control" id="description" [(ngModel)]="ad.description" formControlName="description" placeholder="Markdown is allowed"></textarea>
         </div>
       </div>
 
       <button type="submit" class="btn btn-primary" [disabled]="!newAdForm.valid">Submit</button>
     </form>
-    <div class="media well">
+    <div *ngIf="this.newAdForm.dirty" class="media wellc">
       <div class="media-left">
 
       </div>
       <div class="media-body">
         <h4 class="media-heading">{{ad.title}}</h4>
-        <p [innerHTML] = "ad.description | md"><p><br/>
+        <p [innerHTML] = "ad.description | md"><p>
       </div>
     </div>
   `,

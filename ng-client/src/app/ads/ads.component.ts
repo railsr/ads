@@ -6,6 +6,7 @@ import {Ad} from './ad';
 @Component({
   selector: 'ads',
   template: `
+
   <div class="row">
     <div class="col-md-5">
     <new-ad (createAd)="onCreateAd($event)"></new-ad>
@@ -13,6 +14,7 @@ import {Ad} from './ad';
 
     <div class="col-md-7">
       <h3 *ngIf="(ads && ads.length == 0)" class="text-center">No ads yet</h3>
+
       <div *ngFor="let ad of ads" >
         <ad [data]="ad"></ad>
       </div>
@@ -24,6 +26,7 @@ import {Ad} from './ad';
 export class AdsComponent {
   ads: Ad[];
   ad = new Ad();
+
   constructor(private _adService: AdService) {
 
   }

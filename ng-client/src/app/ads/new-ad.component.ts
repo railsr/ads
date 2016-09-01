@@ -56,6 +56,7 @@ export class NewAdComponent {
     return this._adService.postAd(this.newAdForm.value).subscribe(x => {
       console.log(x);
       this.createAd.next(x);
+      this.newAdForm.reset();
     });
   }
 }

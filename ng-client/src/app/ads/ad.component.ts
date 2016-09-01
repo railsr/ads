@@ -9,13 +9,10 @@ import { Component, Input } from '@angular/core';
     </div>
     <div class="media-body">
       <h4 class="media-heading"><a [routerLink]="['/ads', data.id]">{{data.attributes.title}}</a> </h4>
-      <p [innerHTML] = "data.attributes.description | md"></p><br/>
+      <p [innerHTML] = "data.attributes.description | md | truncate:data.id"></p>
     </div>
   </div>
-  `,
-  styles: [`
-
-  `]
+  `
 })
 export class AdComponent {
   @Input() data;

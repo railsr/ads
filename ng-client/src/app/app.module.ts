@@ -11,7 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { AdsComponent } from './ads/ads.component';
 import { AdComponent } from './ads/ad.component';
 import { AdService } from './ads/ad.service';
-import { MdPipe } from './ads/md.pipe';
+import { MdPipe } from './shared/pipes/md.pipe';
+import { TruncatePipe } from './shared/pipes/truncate.pipe';
 import { ApiService } from './shared';
 import { routing } from './app.routing';
 
@@ -29,7 +30,8 @@ import { routing } from './app.routing';
     AboutComponent,
     AdsComponent,
     AdComponent,
-    MdPipe
+    MdPipe,
+    TruncatePipe
   ],
   providers: [
     ApiService, AdService

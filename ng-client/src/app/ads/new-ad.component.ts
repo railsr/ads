@@ -20,6 +20,7 @@ import {Ad} from './ad';
         <div class="form-group" >
           <label>Description</label>
           <textarea rows="10" class="form-control" id="description" [(ngModel)]="ad.description" formControlName="description" placeholder="Markdown is allowed"></textarea>
+          <div class="alert alert-danger" *ngIf="newAdForm.get('description').dirty && newAdForm.get('description').hasError('required')">Description can't be empty</div>
         </div>
       </div>
 
@@ -48,7 +49,7 @@ export class NewAdComponent {
   constructor(private _fb: FormBuilder, private _adService: AdService) {
     this.newAdForm = _fb.group({
       title: _fb.control('', Validators.compose([Validators.required, Validators.minLength(3)])),
-      description: _fb.control('')
+      description: _fb.control('', Validators.compose([Validators.required]))
     });
   }
 

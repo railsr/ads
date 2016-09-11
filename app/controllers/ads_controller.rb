@@ -1,4 +1,5 @@
 class AdsController < ApplicationController
+  skip_before_action :authenticate_request, only: [:index, :show]
   before_action :set_ad, only: [:show, :update, :destroy]
 
   def index
@@ -12,7 +13,7 @@ class AdsController < ApplicationController
 
   def create
     @ad = Ad.new(ad_params)
-    @ad.user_id = 1 # should be set to current user
+    @ad.user = @current_user
     if @ad.save
       render json: @ad, status: :created, location: @ad
     else

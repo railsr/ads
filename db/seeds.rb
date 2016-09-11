@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+User.create(name: "user12345", email: "user@example.com", password: "user12345")
+
 10.times do
   Ad.create!(
     title: FFaker::Lorem.phrase(5),

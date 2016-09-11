@@ -23,7 +23,7 @@ import {Ad} from './ad';
     </div>
   </div>
   `,
-  directives: [NewAdComponent]
+  directives: [NewAdComponent],
 })
 export class AdsComponent {
   ads: Ad[];
